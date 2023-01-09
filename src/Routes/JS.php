@@ -14,7 +14,7 @@ class JS implements IRoute{
                 file_get_contents( $path."/src/js/socket.io.min.js" ),
                 file_get_contents( $path."/src/js/Socket.js" )
             ];
-            App::body( $data.join(';') );
+            App::body( implode(';',$data) );
             App::contenttype('javascript/application');
         });
 
