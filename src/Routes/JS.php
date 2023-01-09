@@ -11,7 +11,7 @@ class JS implements IRoute{
         BasicRoute::add('/socket/js.js',function($matches){
             $path = dirname(dirname(__DIR__)).'';
             $data = [
-                file_get_contents( $path."/src/js/socket.io.min.js" ),
+                file_get_contents( $path."/src/js/socket.io.js" ),
                 file_get_contents( $path."/src/js/Socket.js" )
             ];
             App::body( implode(';',$data) );
