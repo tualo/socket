@@ -14,8 +14,8 @@ class JS implements IRoute{
                 file_get_contents( $path."/src/js/socket.io.min.js" ),
                 file_get_contents( $path."/src/js/Socket.js" )
             ];
-            TualoApplication::body( $data.join(';') );
-            TualoApplication::contenttype('javascript/application');
+            App::body( $data.join(';') );
+            App::contenttype('javascript/application');
         });
 
     }
