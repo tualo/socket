@@ -3,18 +3,23 @@ Ext.define('Tualo.util.Socket', {
     constructor: function (options) {
         let me = this;
         options = options || {};
+        console.log('Tualo.util.Socket',options);
         this.callParent(options);
         this.socket = new io.Socket(options);
         this.socket.on('connect', function () {
+            console.log('Tualo.util.Socket','connect',arguments);
             me.onConnect();
         });
         this.socket.on('message', function (data) {
+            console.log('Tualo.util.Socket','message',arguments);
             me.onMessage(data);
         });
         this.socket.on('close', function () {
+            console.log('Tualo.util.Socket','close',arguments);
             me.onClose();
         });
         this.socket.on('disconnect', function () {
+            console.log('Tualo.util.Socket','disconnect',arguments);
             me.onDisconnect();
         });
     },
